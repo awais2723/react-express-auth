@@ -1,0 +1,28 @@
+{
+  "name": "authentication-system",
+  "version": "1.0.0",
+  "description": "Autthentication system using node.js express.js sql server",
+  "main": "main.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awais2723/Express_Auth_Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awais2723/Express_Auth_Server/issues"
+  },
+  "homepage": "https://github.com/awais2723/Express_Auth_Server#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mssql": "^11.0.1"
+  }
+}
