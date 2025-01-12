@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const pool = require('../config/dbConfig');
+const {pool} = require('../config/dbConfig');
 const sql = require('mssql');
 
 

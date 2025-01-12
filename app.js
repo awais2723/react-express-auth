@@ -4,21 +4,30 @@ const sql = require('mssql');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const path = require('path');
-require('dotenv').config();
+const {dbConfig} = require("./config/dbConfig");
+require("dotenv").config();
+
+const MSSQLStore = require("connect-mssql")(session);
+const store = new MSSQLStore(dbConfig);
 
 
 const app = express();
 const PORT = 3000;
+  
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
+app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    store: store,
+
     cookie: { secure: false, httpOnly: true },
-}));
+  })
+);
 
 // View engine
 app.set('view engine', 'ejs');

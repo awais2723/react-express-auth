@@ -22,4 +22,7 @@ pool.connect()
     .then(() => console.log('Connected to database'))
     .catch(err => console.error('Database connection failed:', err));
 
-module.exports = pool;
+    module.exports = {
+        dbConfig,
+        pool,
+    };
