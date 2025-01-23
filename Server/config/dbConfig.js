@@ -1,5 +1,7 @@
 const sql = require('mssql');
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config({
+
+}); // Load environment variables from .env file
 
 // Database configuration using environment variables
 const dbConfig = {
@@ -10,6 +12,7 @@ const dbConfig = {
     options: {
         encrypt: true, // Encrypt the connection (required for Azure)
         trustServerCertificate: true, // Accept self-signed certificates for local development
+        
     },
     port: 1433, // Default SQL Server port
 };
